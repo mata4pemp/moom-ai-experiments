@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 
 const SUGGESTIONS = [
@@ -130,6 +131,15 @@ export default function ChatPage() {
           <button className="new-chat-btn" onClick={startNewChat}>
             + New chat
           </button>
+          <Link href="/keywords" className="nav-tool-btn">
+            🔍 Google Keywords Search Volume
+          </Link>
+          <Link href="/amazon-keywords" className="nav-tool-btn">
+            🛒 Amazon Keywords Search Volume
+          </Link>
+          <Link href="/research" className="nav-tool-btn">
+            🧬 Research Explorer
+          </Link>
         </div>
 
         <div className="conv-list">

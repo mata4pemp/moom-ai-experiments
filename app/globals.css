@@ -5,22 +5,21 @@
 }
 
 :root {
-  --bg: #0d0d0d;
-  --sidebar-bg: #161616;
-  --border: #262626;
-  --text: #f0f0f0;
-  --text-muted: #777;
-  --accent: #c084fc;
-  --accent-dark: #a855f7;
-  --user-bubble: #2a2a2a;
-  --ai-bubble: #1a1a2e;
-  --input-bg: #1a1a1a;
+  --bg: #ffffff;
+  --sidebar-bg: #f5f7f6;
+  --border: #e0e8e4;
+  --text: #1a2e24;
+  --text-muted: #7a9186;
+  --accent: #00735c;
+  --accent-dark: #154734;
+  --user-bubble: #e8f4f0;
+  --ai-bubble: #f5f7f6;
+  --input-bg: #f0f4f2;
 }
 
 html,
 body {
   height: 100%;
-  overflow: hidden;
 }
 
 body {
@@ -78,7 +77,7 @@ body {
 
 .new-chat-btn {
   background: var(--accent);
-  color: #0d0d0d;
+  color: #fff;
   border: none;
   padding: 9px 14px;
   border-radius: 8px;
@@ -128,7 +127,7 @@ body {
 }
 
 .conv-item.active {
-  background: #1e1530;
+  background: #d4ede6;
 }
 
 .conv-title {
@@ -152,7 +151,8 @@ body {
   padding: 14px 16px;
   border-top: 1px solid var(--border);
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 10px;
   min-width: 260px;
 }
@@ -286,7 +286,7 @@ body {
 
 .suggestion-chip:hover {
   border-color: var(--accent);
-  background: #1a1028;
+  background: #d4ede6;
 }
 
 /* ---- Message bubbles ---- */
@@ -322,7 +322,7 @@ body {
 }
 
 .message.assistant .avatar {
-  background: #1e1530;
+  background: #d4ede6;
   color: var(--accent);
 }
 
@@ -420,7 +420,7 @@ body {
 
 .send-btn {
   background: var(--accent);
-  color: #0d0d0d;
+  color: #fff;
   border: none;
   padding: 12px 20px;
   border-radius: 12px;
@@ -439,6 +439,28 @@ body {
 .send-btn:disabled {
   opacity: 0.35;
   cursor: not-allowed;
+}
+
+/* ---- Nav tool button ---- */
+.nav-tool-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-tool-btn:hover {
+  background: var(--user-bubble);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 /* ---- Scrollbar ---- */
