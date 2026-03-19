@@ -1,7 +1,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { tools } from '@/lib/tools';
 import { getOrders, getOrdersCount, getProducts, getCustomers } from '@/lib/shopify';
-import { supabase } from '@/lib/supabase';
+import { supabaseAdmin as supabase } from '@/lib/supabaseAdmin';
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
