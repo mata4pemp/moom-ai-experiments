@@ -120,6 +120,7 @@ body {
   cursor: pointer;
   transition: background 0.12s;
   overflow: hidden;
+  position: relative;
 }
 
 .conv-item:hover {
@@ -147,6 +148,45 @@ body {
   color: var(--text-muted);
 }
 
+.conv-actions {
+  display: none;
+  gap: 2px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.conv-item:hover .conv-actions {
+  display: flex;
+}
+
+.conv-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  opacity: 0.6;
+  transition: opacity 0.1s;
+}
+
+.conv-action-btn:hover {
+  opacity: 1;
+  background: var(--border);
+}
+
+.conv-rename-input {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 13px;
+  padding: 3px 6px;
+  outline: none;
+  font-family: inherit;
+}
+
 .sidebar-footer {
   padding: 14px 16px;
   border-top: 1px solid var(--border);
@@ -154,7 +194,8 @@ body {
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  min-width: 260px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .store-badges {
@@ -188,6 +229,27 @@ body {
 .store-label {
   font-size: 11px;
   color: var(--text-muted);
+}
+
+.store-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.store-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.store-domain {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ---- Main chat ---- */
@@ -461,6 +523,57 @@ body {
   background: var(--user-bubble);
   color: var(--accent);
   border-color: var(--accent);
+}
+
+/* ---- Nav tooltip ---- */
+.nav-tool-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.nav-tooltip {
+  position: fixed;
+  left: 272px;
+  background: #154734;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 9px 12px;
+  border-radius: 8px;
+  width: 220px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.nav-tooltip::before {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right-color: #154734;
+}
+
+/* ---- Logout button ---- */
+.logout-btn {
+  background: #154734;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 9px 12px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
 }
 
 /* ---- Scrollbar ---- */

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
+import Sidebar from '@/app/components/Sidebar';
 
 const ALL_COUNTRIES = [
   { label: 'Australia', code: 2036 },
@@ -224,37 +224,7 @@ export default function KeywordsPage() {
 
   return (
     <div className="app" style={{ overflowY: 'auto', height: '100vh' }}>
-      {/* Sidebar */}
-      <aside className="sidebar open">
-        <div className="sidebar-header">
-          <div className="brand">
-            <span className="brand-name">moom health</span>
-          </div>
-          <Link href="/" className="new-chat-btn" style={{ textAlign: 'center', textDecoration: 'none' }}>
-            + New chat
-          </Link>
-          <Link href="/keywords" className="nav-tool-btn" style={{ background: '#d4ede6', color: '#00735c', borderColor: '#00735c' }}>
-            🔍 Google Keywords Search Volume
-          </Link>
-          <Link href="/amazon-keywords" className="nav-tool-btn">
-            🛒 Amazon Keywords Search Volume
-          </Link>
-          <Link href="/research" className="nav-tool-btn">
-            🧬 Research Explorer
-          </Link>
-        </div>
-
-        <div className="conv-list" />
-
-        <div className="sidebar-footer">
-          <div className="store-badges">
-            <span className="badge us">US</span>
-            <span className="badge my">MY</span>
-            <span className="badge hk">HK</span>
-          </div>
-          <span className="store-label">3 stores connected</span>
-        </div>
-      </aside>
+      <Sidebar activePage="keywords" />
 
       {/* Main content */}
       <main className="chat-main" style={{ overflowY: 'auto' }}>
